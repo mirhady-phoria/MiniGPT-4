@@ -1,4 +1,5 @@
 include minigpt4/configs/default.yaml
 include minigpt4/configs/models/minigpt4_vicuna0.yaml
 include minigpt4/configs/datasets/laion/defaults.yaml
-include minigpt4/configs/datasets/*
+include minigpt4/configs/datasets/cc_sbu/align.yaml
+include minigpt4/configs/datasets/cc_sbu/defaults.yaml
