@@ -85,6 +85,7 @@ if __name__ == "__main__":
         version='0.1',
         packages=find_packages(),
         include_package_data=True, # this will look on MANIFEST.in for reference
+        package_data={'minigpt4': ['configs/default.yaml, configs/models/minigpt4_vicuna0.yaml, eval_configs/minigpt_eval.yaml']},
         install_requires=parse_requirements("requirements.txt"),
         url='https://github.com/mirhady-phoria/MiniGPT-4',
         author='Jun Chen, Deyao Zhu, Xiaoqian Shen, Xiang Li, Zechun Liu, Pengchuan Zhang, Raghuraman Krishnamoorthi, Vikas Chandra, Yunyang Xiong☨, Mohamed Elhoseiny☨',

@@ -1,1 +1,1 @@
-recursive-include minigpt4/configs *
+recursive-include configs *
