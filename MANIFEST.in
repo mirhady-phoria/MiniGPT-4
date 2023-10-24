@@ -1,1 +1,2 @@
-recursive-include minigpt4/configs/*
+include minigpt4/configs/default.yaml
+include minigpt4/configs/models/minigpt4_vicuna0.yaml
