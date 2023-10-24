@@ -83,7 +83,7 @@ if __name__ == "__main__":
     setup(
         name='minigpt4',
         version='0.1',
-        packages=find_packages().append('configs'),
+        packages=find_packages(),
         include_package_data=True, # this will look on MANIFEST.in for reference
         package_data={'minigpt4': ['configs/default.yaml, configs/models/minigpt4_vicuna0.yaml']},
         install_requires=parse_requirements("requirements.txt"),
