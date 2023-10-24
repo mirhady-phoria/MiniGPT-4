@@ -15,7 +15,7 @@ model:
   # generation configs
   prompt: ""
 
-  llama_model: "/MiniGPT-4-LLaMA-7B"
+  llama_model: "/MiniGPT-4-LLaMA-7B/"
 
 preprocess:
     vis_processor:
