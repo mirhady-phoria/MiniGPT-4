@@ -104,7 +104,7 @@ class MiniGPT4(Blip2Base):
             print('Do not use Q-Former here.')
 
         print('Loading LLAMA')
-        tokenizer_str = str.split(llama_model, "/")[-1]
+        tokenizer_str = llama_model.strip("/")
         self.llama_tokenizer = LlamaTokenizer.from_pretrained(tokenizer_str, use_fast=False)
         self.llama_tokenizer.pad_token = "$$"
 
