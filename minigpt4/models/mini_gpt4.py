@@ -104,8 +104,7 @@ class MiniGPT4(Blip2Base):
             print('Do not use Q-Former here.')
 
         print('Loading LLAMA')
-        tokenizer_str = llama_model.strip("/")
-        self.llama_tokenizer = LlamaTokenizer.from_pretrained(tokenizer_str, use_fast=False)
+        self.llama_tokenizer = LlamaTokenizer.from_pretrained(llama_model, use_fast=False)
         self.llama_tokenizer.pad_token = "$$"
 
         if self.low_resource:
@@ -330,13 +329,16 @@ class MiniGPT4(Blip2Base):
         return embeds
 
     @classmethod
-    def from_config(cls, cfg):
+    def from_config(cls, cfg, llama_model_dir: str = ""):
+        if llama_model_dir != "":
+            llama_model = llama_model_dir
+        else:
+            llama_model = cfg.get("llama_model")
+
         vit_model = cfg.get("vit_model", "eva_clip_g")
         q_former_model = cfg.get("q_former_model", "https://storage.googleapis.com/sfr-vision-language-research/LAVIS/models/BLIP2/blip2_pretrained_flant5xxl.pth")
         img_size = cfg.get("image_size")
         num_query_token = cfg.get("num_query_token")
-        llama_model = cfg.get("llama_model")
-
         drop_path_rate = cfg.get("drop_path_rate", 0)
         use_grad_checkpoint = cfg.get("use_grad_checkpoint", False)
         vit_precision = cfg.get("vit_precision", "fp16")
