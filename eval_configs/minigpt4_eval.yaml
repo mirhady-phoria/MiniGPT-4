@@ -5,7 +5,7 @@ model:
   end_sym: "###"
   low_resource: True
   prompt_template: '###Human: {} ###Assistant: '
-  ckpt: "./MiniGPT-4-LLaMA-7B/prerained_minigpt4_7b.pth"
+  ckpt: "MiniGPT-4-LLaMA-7B/prerained_minigpt4_7b.pth"
 
 datasets:
   cc_sbu_align:
